@@ -1,0 +1,26 @@
+<nav>
+	<a class="active" href="./">Jogo</a>
+	<a href="./standings">Placar</a>
+</nav>
+
+{{#if photo}}
+
+	<img src="http://aroundcorners.blob.core.windows.net/assets/images/voting/{{photo.name}}" alt="Ready for Change" />
+
+	<div class="button-holder">
+		<form action="./cute" method="post">
+			<input type="hidden" name="photo" value="{{photo.name}}" />
+			<input type="submit" value="Sim!" />
+		</form>
+		<form action="./notcute" method="post">
+			<input type="hidden" name="photo" value="{{photo.name}}" />
+			<input type="submit" value="N&atilde;o" />
+		</form>
+	</div>
+
+{{else}}
+
+	<h3>Obrigado por participar!</h3>
+
+{{/if}}
+	<br/>

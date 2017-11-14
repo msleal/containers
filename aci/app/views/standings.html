@@ -1,0 +1,18 @@
+<nav>
+	<a href="./">Jogo</a>
+	<a class="active" href="./standings">Placar</a>
+</nav>
+
+{{#if standings}}
+
+	{{#each standings}}
+		<ul>
+        		<!-- <img src="photos/{{name}}" alt="Ready for Change" /> -->
+				<li>
+					<p class="up">{{this.likes}}</p>
+					<p class="down">{{this.dislikes}}</p>
+				</li>
+		</ul>
+	{{/each}}
+
+{{/if}}
