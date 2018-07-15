@@ -13,8 +13,13 @@
 # IMPORTANT: If the application(s) executed need to keep running, 
 #            the Startup Script (task(s)) need to execute tsdiscon.exe at the end.
 # --------------------------------------------------------------------------------
+echo "-= tAsK StaRTeD =-"
 Xvfb :19 -screen 0 "${SCREENRESOLUTION}x16" 2>/dev/null &
+XPID = $!
 export DISPLAY=:19
+echo "Starting System..."
 /opt/freerdp-nightly/bin/xfreerdp /cert-ignore /u:"${USERNAME}" /p:"${USERPASSWD}" /size:"${SCREENRESOLUTION}" /v:"${HOSTADDR}" 2>/dev/null
-echo "ETRADE System ONLINE!"
+echo "System is ONLINE!"
+kill ${XPID}
+echo "Exiting..."
 exit 0

@@ -6,9 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 #First install wget...
 RUN apt-get update && apt-get -y install wget sudo gnupg
 RUN echo "deb http://pub.freerdp.com/repositories/deb/bionic/ freerdp-nightly main" >> /etc/apt/sources.list
+RUN wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
 
 #Now lets install the other packages...
-RUN wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
 RUN apt-get update &&\
 	apt-get -y install freerdp-nightly xvfb x11-xkb-utils xfonts-100dpi\
         xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps &&\
