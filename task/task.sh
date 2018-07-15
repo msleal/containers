@@ -15,7 +15,7 @@
 # --------------------------------------------------------------------------------
 echo "-= tAsK StaRTeD =-"
 Xvfb :19 -screen 0 "${SCREENRESOLUTION}x16" 2>/dev/null &
-XPID = $!
+XPID="$!"
 export DISPLAY=:19
 echo "Starting System..."
 /opt/freerdp-nightly/bin/xfreerdp /cert-ignore /u:"${USERNAME}" /p:"${USERPASSWD}" /size:"${SCREENRESOLUTION}" /v:"${HOSTADDR}" 2>/dev/null
